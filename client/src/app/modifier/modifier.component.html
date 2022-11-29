@@ -1,0 +1,32 @@
+<div id="plan">
+    <h1>Modifier des plans repas</h1>
+  
+    <div class="divider"></div>
+  
+    <table id="ht" align="center" border="1" width="1000" class="table-striped table-hover">
+      <thead class="header">
+        <th class="contentCell">NUMÉRO PLAN</th>
+        <th class="contentCell">CATÉGORIE</th>
+        <th class="contentCell">FRÉQUENCE</th>
+        <th class="actionCell">NOMBRE DE PERSONNES</th>
+        <th class="contentCell">CALORIES</th>
+        <th class="contentCell">PRIX($)</th>
+        <th class="contentCell">NUMÉRO FOURNISSEUR</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans; let i = index">
+          <td class="contentCell">{{ plan.numeroplan }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changeCategorie($event, i)">{{ plan.categorie }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changeFrequence($event, i)">{{ plan.frequence }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changeNbrPersonnes($event, i)">{{ plan.nbrpersonnes }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changeNbCalories($event, i)">{{ plan.nbcalories }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changePrix($event, i)">{{ plan.prix }}</td>
+          <td class="contentCell" contenteditable="true" (blur)="changeNumeroFournisseur($event, i)">{{ plan.numerofournisseur }}</td>
+          <td class="actionCell">
+            <button type="button" class="submitbtn" (click)="updatePlan(i)"> <i class="fa fa-edit"></i></button>
+    
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand title" href="/">INF3710 - TP4</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/planrepas">Plans repas</a>
+      <a class="nav-item nav-link active" routerLink="/ajouter">Ajouter</a>
+      <a class="nav-item nav-link active" routerLink="/modifier">Modifier</a>
+      <a class="nav-item nav-link active" routerLink="/supprimer">Supprimer</a>
+    </div>
+  </div>
+</nav>
+
+<div class="home" *ngIf="route == ''">
+  <p>
+    Bienvenue<br />à<br /><span class="planrepas">Plan repas</span
+    >
+  </p>
+  <button type="button" class="btn" routerLink="/planrepas">Voir nos plans repas &#10140;</button>
+</div>
+
+<router-outlet></router-outlet>
